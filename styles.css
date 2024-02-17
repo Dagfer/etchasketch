@@ -5,4 +5,12 @@
     display:flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: space-evenly;
+}
+
+.grid-item{
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    /* border: 1px solid whitesmoke; */
 }
