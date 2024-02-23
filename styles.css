@@ -4,6 +4,15 @@
 body{
     box-sizing: border-box;
     display: flex;
+    flex-direction: column-reverse; 
+    background-color: #142d4c
+}
+#page-name {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    background-color: #ececec;
 }
 #grid-container {
     display:flex;
@@ -12,13 +21,14 @@ body{
     height: 100%;
     justify-content: center;
     align-items:center;
+    background-color: #9fd3c7;
     
 }
 
 .grid-item{
     box-sizing: border-box;
     flex-shrink: 1;
-    background-color: gray;
+    background-color: #385170;
     /* border: 1px solid yellow; */
     width: calc(100% / 16);
     height: calc(100% / 16);
