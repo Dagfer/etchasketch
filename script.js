@@ -45,6 +45,7 @@ function removeGrid(){
 
 function generateGrid(){
     removeGrid()
+    console.log(cellNum);  
 
     const gridContainerTwo = document.createElement('div');
     gridContainerTwo.classList.add('container')
@@ -65,10 +66,15 @@ function generateGrid(){
 
         console.log(gridItem.style.width) 
         console.log(gridItem.style.height)
+        console.log(cellNum);  
+
 
     }}
-else if (cellNum > 100){
+else if (cellNum > 100 || isNaN(cellNum) ){
+    console.log(cellNum);  
+
      alert("that number was too damn high");
+
      for (let i = 0; i < 256; i++){
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
@@ -77,7 +83,6 @@ else if (cellNum > 100){
         gridContainerTwo.appendChild(gridItem);    
     }
     
-     
 }
     const gridItems = document.querySelectorAll('.grid-item');
 
