@@ -15,7 +15,8 @@ console.log(gridContainer);
 for (let i = 0; i < 256; i++){
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
-    // gridItem.style.height = ""
+    gridItem.style.width = "calc(100%/16)";
+    gridItem.style.height = "calc(100%/16)";
     gridContainer.appendChild(gridItem);    
 }
 
@@ -43,6 +44,7 @@ function removeGrid(){
 
 function generateGrid(){
     removeGrid()
+
     const gridContainerTwo = document.createElement('div');
     gridContainerTwo.classList.add('container')
     gridContainerTwo.setAttribute('id', '#grid-containertwo');
@@ -52,9 +54,16 @@ function generateGrid(){
     bodyDouble.classList.add('body-double');
 
     for (let i = 0; i < cellNum ** 2; i++){
+        const sizeReference = parseInt(cellNum)
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
-        gridContainerTwo.appendChild(gridItem);    
+        gridItem.style.width = "calc(100%"+ "/"+`${sizeReference})` ;
+        gridItem.style.height = "calc(100%"+ "/"+`${sizeReference})` ;
+        gridContainerTwo.appendChild(gridItem);   
+
+        console.log(gridItem.style.width) 
+        console.log(gridItem.style.height)
+
     }
     const gridItems = document.querySelectorAll('.grid-item');
 
