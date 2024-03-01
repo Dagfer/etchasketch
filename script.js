@@ -33,7 +33,8 @@ gridItems.forEach((gridItem) => {
 function removeGrid(){
   let  inputPrompt = prompt('how many cells per side?');
   console.log(typeof inputPrompt);
-  if (typeof parseInt(inputPrompt) === 'number'){
+
+  if (inputPrompt != "null" && typeof parseInt(inputPrompt) === 'number'){
       const containers = document.querySelectorAll('.container');
       containers.forEach((container) => {
       container.remove();
@@ -53,7 +54,8 @@ function generateGrid(){
     const bodyDouble = document.querySelector('body');
     bodyDouble.classList.add('body-double');
 
-    for (let i = 0; i < cellNum ** 2; i++){
+    if (cellNum <= 100){
+      for (let i = 0; i < cellNum ** 2; i++){
         const sizeReference = parseInt(cellNum)
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
@@ -64,7 +66,19 @@ function generateGrid(){
         console.log(gridItem.style.width) 
         console.log(gridItem.style.height)
 
+    }}
+else if (cellNum > 100){
+     alert("that number was too damn high");
+     for (let i = 0; i < 256; i++){
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.style.width = "calc(100%/16)";
+        gridItem.style.height = "calc(100%/16)";
+        gridContainerTwo.appendChild(gridItem);    
     }
+    
+     
+}
     const gridItems = document.querySelectorAll('.grid-item');
 
     gridItems.forEach((gridItem) => {
