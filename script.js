@@ -73,9 +73,9 @@ function generateGrid(){
 else if (cellNum > 100 || isNaN(cellNum) ){
     console.log(cellNum);  
 
-     alert("that number was too damn high");
+    alert("Oops! Invalid entry. Enter number between 1 and 100.");
 
-     for (let i = 0; i < 256; i++){
+    for (let i = 0; i < 256; i++){
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridItem.style.width = "calc(100%/16)";
@@ -86,9 +86,9 @@ else if (cellNum > 100 || isNaN(cellNum) ){
 }
     const gridItems = document.querySelectorAll('.grid-item');
 
-    gridItems.forEach((gridItem) => {
-        gridItem.addEventListener('mouseenter', hoverColor);
-      });
+gridItems.forEach((gridItem) => {
+    gridItem.addEventListener('mouseenter', hoverColor);
+    });
       
 }
 
